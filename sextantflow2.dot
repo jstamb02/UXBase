@@ -1,3 +1,7 @@
-graph sextant-register {
-  register -> code;
+graph sextant_login {
+  rankdir=LR;
+  login -- { dashboard help contact about };
+  dashboard -- { help contact about };
+  help -- { contact about };
+  contact -- about;
 }
