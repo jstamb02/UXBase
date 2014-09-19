@@ -1,8 +1,29 @@
-graph sextant_register {
-  register -- { code about contact };
-  code -- about;
-  code -- contact;
-  about -- contact;
+graph sextant {
+  rankdir = LR;
+  a [label = "Login"];
+  b [label = "Already - Yes", shape = box];
+  c [label = "Already - No", shape = box];
+  d [label = "About"];
+  e [label = "Contact"];
+  f [label = "Register"];
+  g [label = "Code"];
+  h [label = "Dashboard"];
+  i [label = "Help"];
+
+  a -- b;
+  a -- c;
+  a -- {d e};
+  b -- h;
+  c -- f -- g;
+  h -- {d e i};
+  d -- { e i};
+  f -- {d e};
+  g -- {d e i};
+  i -- e;
+
+  {rank = same b, c}
+  {rank = same f, h}
+  {rank = same d, e, i}
 }
 
 
