@@ -1,0 +1,9 @@
+graph sextant-register {
+  register -> code;
+}
+
+graph sextant-login {
+  login -> dashboard -> help;
+  login -> about;
+  dashboard -> about;
+}
